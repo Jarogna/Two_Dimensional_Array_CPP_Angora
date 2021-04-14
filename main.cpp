@@ -65,14 +65,27 @@ int main()
   //Note your input data from the above
 
   cout << "Enter all temperature for a week of first city and then second city. \n";
+  
+  // Input for Denver Temps
+  for (int i = 0; i < 7; ++i)
+  {
+      cout << "Denver, Day " << i + 1 << " : ";
+      cin >> temperature[0][i];
+  }
 
- 
+  // Input for Miami Temps
+  for (int i = 0; i < 7; ++i)
+  {
+      cout << "Miami, Day " << i + 1 << " : ";
+      cin >> temperature[1][i];
+  }
+  
 
   // Inserting the values into the temperature array
 
   //note for every dimension of the array you need a for loop 2 dimensions = 2 for loops
 
-  for (int i = 0; i < CITY; ++i)
+  /*for (int i = 0; i < CITY; ++i)
     {
         for(int j = 0; j < WEEK; ++j)
         {
@@ -80,33 +93,44 @@ int main()
             cin >> temperature[i][j];
         }
     }
-
-  memcpy(cityOne, temperature[0], sizeof(cityOne));
-  memcpy(cityTwo, temperature[1], sizeof(cityOne));
+  */
 
   cout << "\n\nDisplaying Values:\n";
 
   // Accessing the values from the temperature array
-
-  for (int i = 0; i < CITY; ++i)
+  
+  // Output temps for Denver
+  for (int i = 0; i < CITY - 1; ++i)
   {
     for(int j = 0; j < WEEK; ++j)
     {
 
-      cout << "City " << i + 1 << ", Day " << j + 1 << " = " << temperature[i][j] << endl;
+      cout << "Denver " << ", Day " << j + 1 << " = " << temperature[0][j] << endl;
+
+    }
+
+  }
+  
+  // Output temps for Miami
+  for (int i = 1; i < CITY; ++i)
+  {
+    for(int j = 0; j < WEEK; ++j)
+    {
+
+      cout << "Miami " << ", Day " << j + 1 << " = " << temperature[1][j] << endl;
 
     }
 
   }
 
-  for (int i = 0; i < 7; ++i)
+  /*for (int i = 0; i < 7; ++i)
     {
-      cout << "Denver " << i + 1 << ", Day = " << cityOne[i] << endl;
+      cout << "Denver, Day =  " << cityOne[i] << endl;
     }
   for (int i = 0; i < 7; ++i)
     {
-      cout << "Miami " << i + 1 << ", Day = " << cityTwo[i] << endl;
-    }    
+      cout << "Miami, Day =  " << cityTwo[i] << endl;
+    } */   
 
    /*For up to 5 Points Extra Credit
 
