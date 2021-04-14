@@ -4,6 +4,8 @@
 //A program to practice working with multi-dimensional arrays
 
 #include <iostream>
+#include <stdio.h>
+#include <string.h>
 using namespace std;
 
 /*
@@ -54,61 +56,48 @@ int main()
 
 {
 
-      const int CITY = 2;
+  const int CITY = 2;
+  const int WEEK = 7;
+  int temperature[CITY][WEEK];
+  int cityOne[7];
+  int cityTwo[7];
 
-      const int WEEK = 7;
+  //Note your input data from the above
 
- 
-
-    int temperature[CITY][WEEK];
-
-    //Note your input data from the above
-
-    cout << "Enter all temperature for a week of first city and then second city. \n";
+  cout << "Enter all temperature for a week of first city and then second city. \n";
 
  
 
-    // Inserting the values into the temperature array
+  // Inserting the values into the temperature array
 
-    //note for every dimension of the array you need a for loop 2 dimensions = 2 for loops
+  //note for every dimension of the array you need a for loop 2 dimensions = 2 for loops
 
-    for (int i = 0; i < CITY; ++i)
-
+  for (int i = 0; i < CITY; ++i)
     {
-
         for(int j = 0; j < WEEK; ++j)
-
         {
-
             cout << "City " << i + 1 << ", Day " << j + 1 << " : ";
-
             cin >> temperature[i][j];
-
         }
-
     }
 
- 
+  memcpy(cityOne, temperature[0], sizeof(cityOne));
+  memcpy(cityTwo, temperature[1], sizeof(cityOne));
 
-    cout << "\n\nDisplaying Values:\n";
+  cout << "\n\nDisplaying Values:\n";
 
- 
+  // Accessing the values from the temperature array
 
-    // Accessing the values from the temperature array
-
-    for (int i = 0; i < CITY; ++i)
-
+  for (int i = 0; i < CITY; ++i)
+  {
+    for(int j = 0; j < WEEK; ++j)
     {
 
-        for(int j = 0; j < WEEK; ++j)
-
-        {
-
-            cout << "City " << i + 1 << ", Day " << j + 1 << " = " << temperature[i][j] << endl;
-
-        }
+      cout << "City " << i + 1 << ", Day " << j + 1 << " = " << temperature[i][j] << endl;
 
     }
+
+  }
 
    /*For up to 5 Points Extra Credit
 
