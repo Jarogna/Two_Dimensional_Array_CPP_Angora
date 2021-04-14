@@ -99,6 +99,15 @@ int main()
 
   }
 
+  for (int i = 0; i < 7; ++i)
+    {
+      cout << "Denver " << i + 1 << ", Day = " << cityOne[i] << endl;
+    }
+  for (int i = 0; i < 7; ++i)
+    {
+      cout << "Miami " << i + 1 << ", Day = " << cityTwo[i] << endl;
+    }    
+
    /*For up to 5 Points Extra Credit
 
       Expand this program:
